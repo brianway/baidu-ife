@@ -6,7 +6,7 @@
 
 HTML/CSS的入门练习，即我们的“小薇学院”
 
-- [任务一：零基础HTML编码](/xiaowei/tast1/tast1.html)
+- [任务一：零基础HTML编码](/xiaowei/task1/task1.html)
 
 
 ### 参考资料
