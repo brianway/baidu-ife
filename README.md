@@ -7,6 +7,7 @@
 HTML/CSS的入门练习，即我们的“小薇学院”
 
 - [任务一：零基础HTML编码](/xiaowei/task1/task1.html)
+- [任务二：零基础HTML及CSS编码（一）](/xiaowei/task2/task2.html)
 
 
 ### 参考资料
@@ -14,5 +15,4 @@ HTML/CSS的入门练习，即我们的“小薇学院”
 - 慕课HTML+CSS基础教程视频：http://www.imooc.com/learn/9
 - MDN HTML入门：https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Introduction
 - Web相关名词通俗解释：https://www.zhihu.com/question/22689579
-
-
+- MDN CSS入门教程: https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_started
