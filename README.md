@@ -24,11 +24,11 @@ HTML/CSS的入门练习，即我们的“小薇学院”
 JavaScript 的入门练习，即“斌斌学院”
 
 - [任务一：零基础JavaScript编码（一）](/binbin/task1/task1.html)
-
+- [任务二：零基础JavaScript编码（二）](/binbin/task2/task2.html)
 
 ### 参考资料
 
 - JavaScript入门篇: http://www.imooc.com/learn/36
 - MDN JavaScript: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
-
+- W3School JavaScript 参考手册: http://www.w3school.com.cn/jsref/index.asp
 
