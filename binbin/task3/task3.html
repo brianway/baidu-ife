@@ -44,12 +44,12 @@
       var data = new Array();
 
       for (var i = 0; i < lis.length; i++) {
-        var city = lis[i].innerText.substr(0, 2);
-        var quality = lis[i].innerText.substr(-2);
+        var city = lis[i].innerText.substring(0, 2);
+        var quality = lis[i].lastChild.innerText;
         data.push([city, quality]);
       }
-
       //console.log(data);
+      
       /*
       data = [
         ["北京", 90],
@@ -59,7 +59,6 @@
       */
 
       return data;
-
     }
 
     /**
@@ -68,15 +67,9 @@
      * 返回一个排序后的数组
      */
     function sortAqiData(data) {
-      data.sort(sortByNum);
-      /**
-       * 逆序排序
-       */
-      function sortByNum(a, b) {
+      return data.sort(function sortByNum(a, b) {
         return b[1] - a[1];
-      }
-
-      return data;
+      });
     }
 
     /**
@@ -87,7 +80,7 @@
     function render(data) {
       //  <li>第一名：北京空气质量：<b>90</b></li>
       var ul = document.getElementById("resort");
-      var order = getOrder(0);
+      var order = getOrder(1);
       for (i in data) {
         var li = document.createElement("li");
         li.innerHTML = generateInnerHTML(order, data[i]);
@@ -96,17 +89,17 @@
       /**
        * 生成 li 的 innerHTML
        */
-      function generateInnerHTML(order, data) {
-        return "第" + order() + "名：" + data[0] + "空气质量：<b>" + data[1] + "</b>";
+      function generateInnerHTML(order, item) {
+        return "第" + order() + "名：" + item[0] + "空气质量：<b>" + item[1] + "</b>";
       }
       /**
        * 将序列转换成汉字
        * 这里用到了闭包
        */
-      function getOrder(start) {
+      function getOrder(start = 0) {
         var numArray = new Array("零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十");
         function next() {
-          return numArray[++start];
+          return numArray[start++];
         }
         return next;
       }
@@ -119,7 +112,6 @@
     }
 
     function init() {
-
       // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
       var sortBtn = document.getElementById("sort-btn");
       sortBtn.onclick = btnHandle;
