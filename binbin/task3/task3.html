@@ -1,0 +1,132 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>IFE JavaScript Task 03</title>
+</head>
+
+<body>
+
+  <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+    <!-- 
+    <li>第一名：北京空气质量：<b>90</b></li>
+    <li>第二名：北京空气质量：<b>90</b></li>
+    <li>第三名：北京空气质量：<b>90</b></li>
+     -->
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+
+  <script type="text/javascript">
+    /**
+     * getData方法
+     * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+     * 返回一个数组，格式见函数中示例
+     */
+    function getData() {
+      /*
+      coding here
+      */
+      var ul = document.getElementById("source");
+      var lis = ul.getElementsByTagName("li");
+      var data = new Array();
+
+      for (var i = 0; i < lis.length; i++) {
+        var city = lis[i].innerText.substr(0, 2);
+        var quality = lis[i].innerText.substr(-2);
+        data.push([city, quality]);
+      }
+
+      //console.log(data);
+      /*
+      data = [
+        ["北京", 90],
+        ["北京", 90]
+        ……
+      ]
+      */
+
+      return data;
+
+    }
+
+    /**
+     * sortAqiData
+     * 按空气质量对data进行从小到大的排序
+     * 返回一个排序后的数组
+     */
+    function sortAqiData(data) {
+      data.sort(sortByNum);
+      /**
+       * 逆序排序
+       */
+      function sortByNum(a, b) {
+        return b[1] - a[1];
+      }
+
+      return data;
+    }
+
+    /**
+     * render
+     * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+     * 格式见ul中的注释的部分
+     */
+    function render(data) {
+      //  <li>第一名：北京空气质量：<b>90</b></li>
+      var ul = document.getElementById("resort");
+      var order = getOrder(0);
+      for (i in data) {
+        var li = document.createElement("li");
+        li.innerHTML = generateInnerHTML(order, data[i]);
+        ul.appendChild(li);
+      }
+      /**
+       * 生成 li 的 innerHTML
+       */
+      function generateInnerHTML(order, data) {
+        return "第" + order() + "名：" + data[0] + "空气质量：<b>" + data[1] + "</b>";
+      }
+      /**
+       * 将序列转换成汉字
+       * 这里用到了闭包
+       */
+      function getOrder(start) {
+        var numArray = new Array("零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十");
+        function next() {
+          return numArray[++start];
+        }
+        return next;
+      }
+    }
+
+    function btnHandle() {
+      var aqiData = getData();
+      aqiData = sortAqiData(aqiData);
+      render(aqiData);
+    }
+
+    function init() {
+
+      // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+      var sortBtn = document.getElementById("sort-btn");
+      sortBtn.onclick = btnHandle;
+    }
+
+    init();
+  </script>
+</body>
+
+</html>

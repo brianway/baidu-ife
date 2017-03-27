@@ -2,6 +2,8 @@
 
 百度前端技术学院2017学习建议：http://weibo.com/ttarticle/p/show?id=2309404078770767162701
 
+预览效果 https://htmlpreview.github.io/?代码文件的github地址
+
 ## 小薇学院
 
 HTML/CSS的入门练习，即我们的“小薇学院”
@@ -25,6 +27,7 @@ JavaScript 的入门练习，即“斌斌学院”
 
 - [任务一：零基础JavaScript编码（一）](/binbin/task1/task1.html)
 - [任务二：零基础JavaScript编码（二）](/binbin/task2/task2.html)
+- [任务三：零基础JavaScript编码（三）](/binbin/task3/task3.html)
 
 ### 参考资料
 
