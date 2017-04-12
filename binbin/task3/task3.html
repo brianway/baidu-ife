@@ -48,8 +48,17 @@
         var quality = lis[i].lastChild.innerText;
         data.push([city, quality]);
       }
+
       //console.log(data);
+      /* 遍历 lis 的 member，不止七项，多出了length,item 和 namedItem
+      console.log(lis);
+      for (var item in lis) {
+
+        console.log(item);
+      }
+      */
       
+
       /*
       data = [
         ["北京", 90],
@@ -67,7 +76,7 @@
      * 返回一个排序后的数组
      */
     function sortAqiData(data) {
-      return data.sort(function sortByNum(a, b) {
+      return data.sort(function(a, b) {
         return b[1] - a[1];
       });
     }
