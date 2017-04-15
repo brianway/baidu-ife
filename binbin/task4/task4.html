@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>IFE JavaScript Task 04</title>
+  <style type="text/css">
+    button {
+      background-color: white;
+      border-radius: 5px;
+      border: 1px lightgrey solid;
+    }
+    
+    #left-out {
+      margin-left: 20px;
+    }
+    
+    label {
+      margin-right: 10px;
+      background-color: red;
+      color: white;
+      font-size: 20px;
+      padding: 5px;
+    }
+    
+    #queue {
+      margin: 10px 0px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="control">
+    <input type="text" id="in-number" />
+    <button id="left-in">左侧入</button>
+    <button id="right-in">右侧入</button>
+    <button id="left-out">左侧出</button>
+    <button id="right-out">右侧出</button>
+  </div>
+  <div id="queue">
+
+  </div>
+
+  <script type="text/javascript">
+    (function () {
+      var queue = document.getElementById("queue");
+
+      init();
+
+      var input = document.getElementById("in-number"),
+        leftIn = document.getElementById("left-in"),
+        rightIn = document.getElementById("right-in"),
+        leftOut = document.getElementById("left-out"),
+        rightOut = document.getElementById("right-out");
+
+      var msg = "请确认输入的格式是数字";
+
+      leftIn.onclick = function () {
+        if (isNumber(input.value)) {
+          queue.insertBefore(createLabel(input.value), queue.firstElementChild);
+        } else {
+          alert(msg);
+        }
+      };
+
+      rightIn.onclick = function () {
+        if (isNumber(input.value)) {
+          queue.appendChild(createLabel(input.value));
+        } else {
+          alert(msg);
+        }
+      };
+
+      leftOut.onclick = function () {
+        var first = queue.firstElementChild;
+        queue.removeChild(first);
+        alert(first.textContent);
+      };
+
+      rightOut.onclick = function () {
+        var last = queue.lastElementChild;
+        queue.removeChild(last);
+        alert(last.textContent);
+      };
+
+      /*
+      初始化队列
+      */
+      function init() {
+        var initArr = //[];
+          [10, 3, 7, 12, 11, 30];//测试数据
+
+        initArr.forEach(function (item) {
+          var label = createLabel(item);
+          queue.appendChild(label);
+        });
+      }
+
+      /*
+      新建 label
+      */
+      function createLabel(item) {
+        var label = document.createElement("label");
+        label.innerHTML = item;
+        label.onclick = function () {
+          queue.removeChild(label);
+        };
+        return label;
+      }
+
+
+      /*
+      判断输入是否为数字
+      */
+      function isNumber(input) {
+        return input ? !isNaN(input) : false;
+      }
+
+
+    })();
+  </script>
+</body>
+
+</html>

@@ -28,6 +28,8 @@ JavaScript 的入门练习，即“斌斌学院”
 - [任务一：零基础JavaScript编码（一）](/binbin/task1/task1.html)
 - [任务二：零基础JavaScript编码（二）](/binbin/task2/task2.html)
 - [任务三：零基础JavaScript编码（三）](/binbin/task3/task3.html)
+- [任务四：基础JavaScript练习（一)](/binbin/task4/task4.html)
+
 
 ### 参考资料
 
