@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>IFE JavaScript Task 06</title>
+  <link href="task6.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="control">
+    <input type="text" id="query-str" />
+    <button id="query">查询</button>
+
+  </div>
+  <div id="text-container">
+    <textarea id="input" placeholder="允许许一次批量输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔"></textarea>
+    <div id="cloner"></div>
+    <div id="counter">匹配的元素个数:&nbsp;<span id="counts"></span></div>
+  </div>
+  <div id="matcher"></div>
+
+  <script type="text/javascript">
+    //参考：http://stackoverflow.com/questions/142527/highlight-text-inside-of-a-textarea
+    (function () {
+      const regex = /[,，\s、]+/;
+
+      var input = document.getElementById("input"),
+        btnQuery = document.getElementById("query"),
+        inQuery = document.getElementById("query-str"),
+        cloner = document.getElementById("cloner"),
+        counts = document.getElementById("counts"),
+        matcher = document.getElementById("matcher");
+
+      init();
+
+      btnQuery.onclick = function () {
+        //console.log("当前的 input.value: " + input.value);
+        queryStr = inQuery.value; //读取查询词
+
+        if (validQuery(queryStr)) {
+          highlight(queryStr);
+          var tokens = input.value.split(regex);
+          listMatched(tokens, queryStr);
+        } else {
+          console.log("查询词不能含有'回车，逗号（全角半角），顿号，空格（全角半角、Tab等）'");
+        }
+      }
+
+      input.oninput = function () {
+        cloner.innerHTML = input.value;
+      }
+
+
+      //---------------functions-------------------------
+      /**
+       * 初始化队列
+       */
+      function init() {
+        var initText = //"wo大方法的，饭店发生的,123,54545 asdas";
+          "asdfghjklasdfghjklasdfghjklasdf，ghjkla,sdfghjklasdfghjkla  sdfghjklasd\tfghjklasdfgh\njklasdfghjkl";//测试数据
+        input.value = initText;
+        counts.innerText = 0;
+      }
+
+      /**
+       * 验证查询字符串的有效性
+       */
+      function validQuery(queryStr) {
+        if (!queryStr) return false;
+        var pattern = new RegExp(regex);
+        //console.log("validQuery的pattern：" + pattern);
+        //pattern.test(queryStr) ? console.log("匹配: " + pattern.exec(queryStr)) : console.log("合法");
+        return !pattern.test(queryStr);
+      }
+
+      /**
+       * 高亮显示查询的词语 
+       */
+      function highlight(queryStr) {
+        //读取文本
+        var parseText = input.value,
+          //替换文本
+          pattern = new RegExp(queryStr, "g"),
+          replace = "$&";
+        parseText = parseText.replace(pattern, '<span class="highlight">' + replace + '</span>');
+        cloner.innerHTML = parseText;
+        //console.log(parseText);
+      }
+
+      /**
+       * 罗列命中的 token 
+       */
+      function listMatched(tokens, query) {
+        var count = 0;
+        matched = "";
+        for (var i in tokens) {
+          if (tokens[i].match(query)) {
+            matched += tokens[i] + "\n";
+            count++;
+          }
+        }
+        matcher.innerText = matched;
+        counts.innerText = count;
+      }
+
+    })();
+  </script>
+</body>
+
+</html>

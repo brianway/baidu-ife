@@ -1,0 +1,112 @@
+button {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px lightgrey solid;
+}
+
+#search {
+    margin-left: 20px;
+}
+
+#text-container {
+    position: relative;
+    margin-top: 10px;
+    background-color: transparent;
+    border: 0px;
+    width: 430px;
+    height: 138px;
+}
+/*
+#input {
+    direction: ltr;
+    position: absolute;
+    padding: 5px;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    border: 1px solid #595959;
+    background: transparent;
+    width: 399px;
+    height: 109px;
+    cursor: text;
+    font-size: 13px;
+    line-height: 18px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    resize: none;
+    z-index: 5;
+}*/
+
+#input {
+    direction: ltr;
+    position: absolute; 
+    padding: 5px; 
+    left: 0px; 
+    top: 0px; 
+    overflow: hidden; 
+    border: 1px solid #595959; 
+    background: transparent; 
+    width: 399px; 
+    height: 109px; 
+    cursor: text; 
+    font-size: 13px; 
+    font-family: Arial; 
+    line-height: 18px; 
+    word-wrap: break-word; 
+    white-space: pre-wrap; 
+    resize: none; 
+    border-radius: 5px; 
+    z-index: 5;
+}
+
+#cloner {
+   direction: ltr; 
+   position: absolute; 
+   padding: 5px; 
+   left: 0px; 
+   top: 0px; 
+   overflow: hidden; 
+   border: none; 
+   background: white; 
+   width: 400px; 
+   height: 110px; 
+   font-size: 13px; 
+   font-family: Arial; 
+   white-space: pre-wrap; 
+   line-height: 18px; 
+   word-wrap: break-word; 
+   border-radius: 5px; 
+   color: white; 
+   z-index: 4;
+}
+
+span.highlight {
+    padding: 0;
+    margin: 0;
+    height: 16px;
+    font-size: 13px;
+    white-space: pre-wrap;
+    color: white;
+    border-radius: 3px;
+    background-color: yellow;
+    color: orange;
+}
+
+#counter{
+    position: absolute; 
+    font-family: Arial; 
+    font-size: 11px; 
+    font-weight: bold; 
+    color: red; 
+    border: 0px; 
+    left: 0px; 
+    top: 118px; 
+    text-align: left; 
+    padding: 3px 5px; 
+    margin: 0px; 
+    background: 
+    transparent; 
+    border-radius: 0px; 
+    z-index: 3;
+}
+
