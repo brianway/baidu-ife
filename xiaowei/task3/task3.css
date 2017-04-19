@@ -1,0 +1,66 @@
+* {margin: 0; padding: 0;}
+body{
+    padding: 20px;
+}
+
+#container{
+    /*position: absolute;*/
+    overflow: auto;
+    padding: 20px;
+    background: #eee;
+    border: 1px #999 solid;
+}
+
+.left {
+    float: left;
+    padding: 20px;
+    background: white;
+    width: 160px;
+    border: 1px #999 solid;
+}
+
+.right {
+    float: right;
+    padding: 20px;
+    background: white;
+    width: 80px;
+    border: 1px #999 solid;
+    text-align:center;
+}
+
+.center{
+    padding: 20px;
+    background: white;
+    border: 1px #999 solid;
+    /*overflow: hidden; 
+    height: auto;*/
+    margin:0px 142px auto 222px;
+}
+.center p{
+    padding: 0.5em 0;
+    word-wrap: break-word;
+}
+
+#team-intro{
+    padding: 0 0 0 20px;
+    margin-left: 82px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+img{
+    display:block;
+    border: 1px #999 solid;
+}
+
+.left img{
+    float: left;
+}
+
+.right img{
+    margin-top: 20px;
+}
+.right img.first{
+    margin-top: 0;
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>任务三：三栏式布局</title>
+    <link href="task3.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="left">
+            <img src="./pic/com_80.jpg">
+            <div id="team-intro">
+                <p>Brian Way</p>
+            </div>
+        </div>
+        <div class="right">
+            <img src="./pic/me_80.jpg" class="first">
+            <img src="./pic/me_80.jpg">
+            <img src="./pic/me_80.jpg">
+            <img src="./pic/me_80.jpg">
+        </div>
+        <div class="center">
+            <p>下面是该页面的实现思路:</p>
+            <p>
+                这里定位使用的是 float，两边分别使用 left 和 right 浮动， 由于这两块是定宽，所以中间的块只需要 margin 设置左右外边距即可。 对文本内容设置 `word-wrap: break-word;` 即可实现宽度缩放兼容。
+            </p>
+            <p>
+                对于左浮动块的内部的布局，这里先将 img 块左浮动，使其脱离文档流，再对包含文字的 div 使用 margin-left 使其和图片位于统一高度。
+            </p>
+            <p>有几个细节问题:</p>
+            <p>
+                1. box-sizing的问题
+                <br/> 2. 文字的居中和包裹
+                <br/> 3. 浏览器默认样式的边距重置： `* {margin: 0; padding: 0;}`，否则填不满
+                <br/> 4. img标签与div层之间会有空隙，图片下方出现空隙，使用display:block 就消除
+            </p>
+        </div>
+
+    </div>
+
+</body>
+<!--
+    参考 http://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use
+-->
+
+</html>
