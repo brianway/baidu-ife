@@ -1,5 +1,7 @@
 # 百度前端学院 2017 学习
 
+官网：http://ife.baidu.com/course/all
+
 百度前端技术学院2017学习建议：http://weibo.com/ttarticle/p/show?id=2309404078770767162701
 
 预览效果 https://htmlpreview.github.io/?代码文件的github地址
@@ -11,6 +13,7 @@ HTML/CSS的入门练习，即我们的“小薇学院”
 - [任务一：零基础HTML编码](/xiaowei/task1/task1.html)
 - [任务二：零基础HTML及CSS编码（一）](/xiaowei/task2/task2.html)
 - [任务三：三栏式布局](/xiaowei/task3/task3.html)
+- [任务四：定位和居中问题](/xiaowei/task4/task4.html)
 
 
 ### 参考资料
