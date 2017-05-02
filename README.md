@@ -15,6 +15,7 @@ HTML/CSS的入门练习，即我们的“小薇学院”
 - [任务三：三栏式布局](/xiaowei/task3/task3.html)
 - [任务四：定位和居中问题](/xiaowei/task4/task4.html)
 - [任务五：零基础HTML及CSS编码（二）](/xiaowei/task5/task5.html)
+- [任务八：响应式网格（栅格化）布局](/xiaowei/task8/task8.html)
 
 ### 参考资料
 
