@@ -1,0 +1,47 @@
+* {margin: 0; padding: 0;}
+*{box-sizing: border-box; }
+
+
+.flex-container{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-item{
+    width: 150px;
+    border: 1px solid #f00; 
+}
+
+.item-1{
+    height: 120px;
+}
+
+.item-2{
+    height: 100px;
+}
+
+.item-3{
+    height: 40px;
+}
+
+.item-4{
+    height: 200px;
+    border: 1px solid #00f; 
+}
+
+
+ @media (max-width: 640px){
+    .flex-container{
+        align-items: flex-start;/*align-items is for items in a single row.*/
+        align-content: flex-start;/*align-content is for multi line flexible boxes. It has no effect when items are in a single line. */
+    }
+
+    .item-4{
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
